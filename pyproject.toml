@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "project-template"
+name = "Satoshi-guard"
 version = "0.1.0"
-description = "Basic Python FastAPi project structure for development."
+description = "Crypto custody solution."
 authors = ["Sebastian Wdowiarz"]
 readme = "README.md"
 packages = []
@@ -10,7 +10,7 @@ packages = []
 python = "^3.11"
 fastapi = "0.104.1"
 uvicorn = "0.27.1"
-pyyaml = "^6.0.1"
+pyyaml = "6.0.1"
 
 
 [tool.poetry.group.dev.dependencies]
