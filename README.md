@@ -2,8 +2,25 @@
 
 # Satoshi-Guard
 
-Welcome to Satoshi-Guard, a robust and intuitive crypto custody solution designed to streamline the management of your crypto accounts, wallets, and transactions with ease and security. Satoshi-Guard offers a modular monolithic architecture poised for potential evolution into a microservices-based application. 
+Welcome to Satoshi-Guard, a robust and intuitive crypto custody solution designed to streamline the management of your crypto accounts, wallets, and transactions with ease and security. Satoshi-Guard offers a modular monolithic architecture poised for potential evolution into a microservices-based application.
 Our solution caters to both individuals and enterprises looking to enhance their cryptocurrency management processes.
+
+### Project Structure Overview
+- **/ci**
+- **/config:** Contains project related configurations that are common across all modules.
+- **/modules:** Contains domain-specific logic grouped by functionality. Each module should be self-contained with its own ports (interfaces) and adapters (implementations), following the ports and adapters architecture principles.
+
+  - **/accounts:** Manages investor accounts creation and management.
+  - **/transactions:** Handles creation, sending, and receiving of cryptocurrency transactions.
+  - **/wallets:** Manages cryptocurrency addresses and wallet functionalities.
+  - **/signing:** Responsible for the secure signing of transactions, potentially integrating with Hardware Security Modules (HSMs).
+  - **/authentication:** Handles authentication mechanisms for users.
+  - **/listener:** Listens to blockchain events and transactions.
+  - **/confirmations:** Manages transaction confirmation processes.
+  - **/core/shared:** Contains shared utilities and common functionalities like logging, error handling, and shared domain models. This is where cross-cutting concerns are addressed.
+
+- **/infrastructure:** Holds implementations of various infrastructure concerns like database access, external services integrations (e.g., blockchain APIs, HSM APIs), message brokers, and caching solutions. Infrastructure services are typically exposed to the modules via interfaces defined in the modules themselves, following the Dependency Inversion Principle.
+- **/tests**
 
 ### My Stats:
 
@@ -18,4 +35,3 @@ Satoshi-Guard is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 ## Feedback
 
 If you have any feedback, please reach out to me on: [![mangekyousharingan](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mangekyousharingan)
-
