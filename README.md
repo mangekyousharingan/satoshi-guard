@@ -6,7 +6,7 @@ Welcome to Satoshi-Guard, a robust and intuitive crypto custody solution designe
 Our solution caters to both individuals and enterprises looking to enhance their cryptocurrency management processes.
 
 ### Project Structure Overview
-- **/ci**
+- **/ci:** Contains continues integration settings and files.
 - **/config:** Contains project related configurations that are common across all modules.
 - **/modules:** Contains domain-specific logic grouped by functionality. Each module should be self-contained with its own ports (interfaces) and adapters (implementations), following the ports and adapters architecture principles.
 
@@ -20,7 +20,7 @@ Our solution caters to both individuals and enterprises looking to enhance their
   - **/core/shared:** Contains shared utilities and common functionalities like logging, error handling, and shared domain models. This is where cross-cutting concerns are addressed.
 
 - **/infrastructure:** Holds implementations of various infrastructure concerns like database access, external services integrations (e.g., blockchain APIs, HSM APIs), message brokers, and caching solutions. Infrastructure services are typically exposed to the modules via interfaces defined in the modules themselves, following the Dependency Inversion Principle.
-- **/tests**
+- **/tests:** Tests
 
 ### My Stats:
 
