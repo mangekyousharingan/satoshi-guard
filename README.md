@@ -8,9 +8,8 @@ Our solution caters to both individuals and enterprises looking to enhance their
 ### Project Structure Overview
 
 - **/ci:** Contains continues integration settings and files.
-- **/config:** Contains project related configurations that are common across all modules.
 - **/modules:** Contains domain-specific logic grouped by functionality. Each module should be self-contained with its own ports (interfaces) and adapters (implementations), following the ports and adapters architecture principles.
-
+  - **/config:** Contains project related configurations that are common across all modules.
   - **/accounts:** Manages investor accounts creation and management.
   - **/transactions:** Handles creation, sending, and receiving of cryptocurrency transactions.
   - **/wallets:** Manages cryptocurrency addresses and wallet functionalities.
@@ -20,7 +19,7 @@ Our solution caters to both individuals and enterprises looking to enhance their
   - **/confirmations:** Manages transaction confirmation processes.
   - **/core/shared:** Contains shared utilities and common functionalities like logging, error handling, and shared domain models. This is where cross-cutting concerns are addressed.
 
-- **/infrastructure:** Holds implementations of various infrastructure concerns like database access, external services integrations (e.g., blockchain APIs, HSM APIs), message brokers, and caching solutions. Infrastructure services are typically exposed to the modules via interfaces defined in the modules themselves, following the Dependency Inversion Principle.
+  - **/infrastructure:** Holds implementations of various infrastructure concerns like database access, external services integrations (e.g., blockchain APIs, HSM APIs), message brokers, and caching solutions. Infrastructure services are typically exposed to the modules via interfaces defined in the modules themselves, following the Dependency Inversion Principle.
 - **/tests:** Tests
 
 ### My Stats:
