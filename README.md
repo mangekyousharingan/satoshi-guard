@@ -22,6 +22,9 @@ Our solution caters to both individuals and enterprises looking to enhance their
   - **/infrastructure:** Holds implementations of various infrastructure concerns like database access, external services integrations (e.g., blockchain APIs, HSM APIs), message brokers, and caching solutions. Infrastructure services are typically exposed to the modules via interfaces defined in the modules themselves, following the Dependency Inversion Principle.
 - **/tests:** Tests
 
+
+Each module in the /modules directory should follow the ports and adapters structure.
+
 ### My Stats:
 
 [![commits](https://badgen.net/github/commits/mangekyousharingan/satoshi-guard/master)](https://github.com/mangekyousharingan/satoshi-guard/commits/master?icon=github&color=green)
