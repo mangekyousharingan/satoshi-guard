@@ -7,6 +7,7 @@ Our solution caters to both individuals and enterprises looking to enhance their
 
 ### Project Structure Overview
 
+
 - **/ci:** Contains continues integration settings and files.
 - **/modules:** Contains domain-specific logic grouped by functionality. Each module should be self-contained with its own ports (interfaces) and adapters (implementations), following the ports and adapters architecture principles.
   - **/config:** Contains project related configurations that are common across all modules.
