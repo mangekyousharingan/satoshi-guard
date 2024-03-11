@@ -9,21 +9,27 @@ Our solution caters to both individuals and enterprises looking to enhance their
 
 
 - **/ci:** Contains continues integration settings and files.
+- **/config:** Contains project related configurations that are common across all modules.
+- **/infrastructure:** Holds implementations of various infrastructure concerns like database access, external services integrations (e.g., blockchain APIs, HSM APIs), message brokers, and caching solutions. Infrastructure services are typically exposed to the modules via interfaces defined in the modules themselves, following the Dependency Inversion Principle.
 - **/modules:** Contains domain-specific logic grouped by functionality. Each module should be self-contained with its own ports (interfaces) and adapters (implementations), following the ports and adapters architecture principles.
-  - **/config:** Contains project related configurations that are common across all modules.
   - **/accounts:** Manages investor accounts creation and management.
+  - **/authentication:** Handles authentication mechanisms for users.
+  - **/confirmations:** Manages transaction confirmation processes.
+  - **/listener:** Listens to blockchain events and transactions.
+  - **/shared:** Contains shared utilities and common functionalities like logging, error handling, and shared domain models. This is where cross-cutting concerns are addressed.
+  - **/signing:** Responsible for the secure signing of transactions, potentially integrating with Hardware Security Modules (HSMs).
   - **/transactions:** Handles creation, sending, and receiving of cryptocurrency transactions.
   - **/wallets:** Manages cryptocurrency addresses and wallet functionalities.
-  - **/signing:** Responsible for the secure signing of transactions, potentially integrating with Hardware Security Modules (HSMs).
-  - **/authentication:** Handles authentication mechanisms for users.
-  - **/listener:** Listens to blockchain events and transactions.
-  - **/confirmations:** Manages transaction confirmation processes.
-  - **/shared:** Contains shared utilities and common functionalities like logging, error handling, and shared domain models. This is where cross-cutting concerns are addressed.
-  - **/infrastructure:** Holds implementations of various infrastructure concerns like database access, external services integrations (e.g., blockchain APIs, HSM APIs), message brokers, and caching solutions. Infrastructure services are typically exposed to the modules via interfaces defined in the modules themselves, following the Dependency Inversion Principle.
 - **/tests:** Tests
 
 
-Each module in the /modules directory should follow the ports and adapters structure.
+Each module in the project implements the ports and adapters architecture, with the following structure:
+- **/adapters**: 
+- **/domain**:
+- **/ports**:
+- **/service**:
+
+
 
 ### My Stats:
 
