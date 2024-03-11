@@ -18,8 +18,7 @@ Our solution caters to both individuals and enterprises looking to enhance their
   - **/authentication:** Handles authentication mechanisms for users.
   - **/listener:** Listens to blockchain events and transactions.
   - **/confirmations:** Manages transaction confirmation processes.
-  - **/core/shared:** Contains shared utilities and common functionalities like logging, error handling, and shared domain models. This is where cross-cutting concerns are addressed.
-
+  - **/shared:** Contains shared utilities and common functionalities like logging, error handling, and shared domain models. This is where cross-cutting concerns are addressed.
   - **/infrastructure:** Holds implementations of various infrastructure concerns like database access, external services integrations (e.g., blockchain APIs, HSM APIs), message brokers, and caching solutions. Infrastructure services are typically exposed to the modules via interfaces defined in the modules themselves, following the Dependency Inversion Principle.
 - **/tests:** Tests
 
