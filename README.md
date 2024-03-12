@@ -24,7 +24,7 @@ Our solution caters to both individuals and enterprises looking to enhance their
 
 
 Each module in the project implements the ports and adapters architecture, with the following structure:
-- **/adapters**: 
+- **/adapters**:
 - **/domain**:
 - **/ports**:
 - **/service**:
