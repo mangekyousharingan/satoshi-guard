@@ -1,20 +1,27 @@
+import sys
+
+import yaml
+
 from src.config.models import HttpServer
 from src.config.ports import AbstractConfig
-import yaml
 
 
 class YAMLConfig(AbstractConfig):
-    def __init__(self, config_file: str) -> str:
-        self._config_file = self._config_path(config_file)
+    def __init__(self, config_path: str) -> None:
+        self._config_file = self._read_config(config_path)
 
-    def _config_path(self, config_file: str) -> str:
-        return f"src/config/files/{config_file}.yaml"
-
-    def _read_config(self):
-        # TODO: read config
-        pass
+    def _read_config(self, config_path: str):
+        with open(config_path) as stream:
+            try:
+                config_file = yaml.safe_load(stream)
+            except yaml.YAMLError as exc:
+                print(exc)
+                sys.exit(1)
+            finally:
+                return config_file
 
     @property
     def http_server(self) -> HttpServer:
-        # TODO: read from file
-        return HttpServer(host="0.0.0.0", port=8080)
+        return HttpServer(
+            host=self._config_file["http_server"]["host"], port=self._config_file["http_server"]["port"]
+        )

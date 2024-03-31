@@ -20,12 +20,16 @@ def parse_command_line_args() -> argparse.Namespace:
     return args
 
 
+def config_path(config_file: str) -> str:
+    return f"src/config/files/{config_file}.yml"
+
+
 def main() -> None:
     args = parse_command_line_args()
-    config = YAMLConfig(args.config)
+    config = YAMLConfig(config_path(args.config))
     satoshi_guard = SatoshiGuard(port=config.http_server.port, host=config.http_server.host)
     satoshi_guard.start_service()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
