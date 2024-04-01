@@ -6,7 +6,9 @@ from sqlalchemy.orm import Session, sessionmaker
 
 class DbSessionHandler:
     def __init__(self, connection_url: str) -> None:
-        self._engine = create_engine("sqlite+pysqlite:///:memory:", echo=True)
+        # TODO: read values from config for DB connection url!
+        self._connection_url = "postgresql://satoshi:satoshi123@localhost:5432/satoshiguard"
+        self._engine = create_engine(self._connection_url, echo=True)
         self._session: Session
 
     def __enter__(self):

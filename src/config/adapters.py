@@ -2,7 +2,7 @@ import sys
 
 import yaml
 
-from src.config.models import HttpServer
+from src.config.models import Database, HttpServer
 from src.config.ports import AbstractConfig
 
 
@@ -24,4 +24,14 @@ class YAMLConfig(AbstractConfig):
     def http_server(self) -> HttpServer:
         return HttpServer(
             host=self._config_file["http_server"]["host"], port=self._config_file["http_server"]["port"]
+        )
+
+    @property
+    def database(self) -> Database:
+        return Database(
+            host=self._config_file["database"]["host"],
+            port=self._config_file["database"]["port"],
+            username=self._config_file["database"]["username"],
+            password=self._config_file["database"]["password"],
+            db_name=self._config_file["database"]["db_name"],
         )

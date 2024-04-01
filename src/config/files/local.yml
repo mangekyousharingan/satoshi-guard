@@ -1,3 +1,10 @@
 http_server:
   host: 0.0.0.0
   port: 8080
+
+database:
+  host: localhost
+  port: 5432
+  username: satoshi
+  password: satoshi123 # TODO: secret!
+  db_name: satoshiguard
