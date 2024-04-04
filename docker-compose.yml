@@ -1,6 +1,10 @@
 version: '3'
 services:
-  project-template:
-    build: ./ci/docker
+  satoshi:
+    image: satoshi-image
+    container_name: satoshi-guard
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
