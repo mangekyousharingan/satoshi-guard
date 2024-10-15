@@ -9,7 +9,7 @@ packages = []
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "0.110.0"
-uvicorn = "0.27.1"
+uvicorn = "0.32.0"
 pyyaml = "6.0.1"
 sqlalchemy = "2.0.28"
 sqlalchemy-utils = "^0.41.1"
